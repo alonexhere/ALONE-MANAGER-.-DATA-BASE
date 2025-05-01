@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sim Details Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 300px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px 0;
+      width: 90%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 10px;
+      background: #e9ecef;
+      border-radius: 5px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Sim Details Checker</h2>
+    <input type="text" id="simNumber" placeholder="Enter Sim Number">
+    <button onclick="getSimDetails()">Check Details</button>
+
+    <div class="result" id="resultBox">
+      <p><strong>Sim Number:</strong> <span id="showNumber"></span></p>
+      <p><strong>Network:</strong> <span id="showNetwork">Zong</span></p>
+      <p><strong>Location:</strong> <span id="showLocation">Karachi</span></p>
+      <p><strong>Status:</strong> <span id="showStatus">Active</span></p>
+    </div>
+  </div>
+
+  <script>
+    function getSimDetails() {
+      var number = document.getElementById("simNumber").value;
+      if(number === ""){
+        alert("Please enter a sim number.");
+        return;
+      }
+
+      // Dummy result show karne ke liye
+      document.getElementById("showNumber").innerText = number;
+      document.getElementById("resultBox").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
